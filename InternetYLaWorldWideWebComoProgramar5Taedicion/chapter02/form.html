@@ -1,0 +1,46 @@
+<!--Libro:Internet & World Wide Web Como Programar 5ta edicion. 
+  Capitulo 02.-Introduccion al html5
+  Pagina 0012.-Pagina con la estructura basica html incluyendo un formulario.
+-->
+<!Doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Formulario
+        </title>
+    </head>
+    <body>
+        <h1>Formulario de retroalimentaci&oacute;n</h1>
+        
+        <p>
+            Llene este formulario para ayudarnos a mejorar nuestro sitio.
+        </p>
+
+        <!--Esta etiqueta empieza el formulario, indica el metodo-->
+        <!--de enviar informacion y la ubicaion de la secuencia de comandos-->
+        <!--de procesamiento del formulario-->
+        <form method="post" action="http://www.deitel.com">
+            <!--Las entradas ocultas contienen informacion-->
+            <!--no visual que tambien se enviara-->
+            <input type="hidden" name="addressee" value="deitel@deitel.com">
+            <input type="hidden" name="subject" value="feedbackForm">
+            <input type="hidden" name="redirect" value="form.html">
+            
+            <!--<input type = "text"> Inserta un campo de texto-->
+            <p>
+                <label>
+                    Nombre: <input name="nameUser" type="text" size="25" maxlength="30">
+                </label>
+            </p>
+
+            <p>
+                <!--Los tipos de entrada "submit" y "reset" insertan-->
+                <!-- botones para enviar y borrar el contenido -->
+                <!-- del formulario, respectivamente-->
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Borrar">
+            </p>
+        </form>
+    </body>
+</html>
