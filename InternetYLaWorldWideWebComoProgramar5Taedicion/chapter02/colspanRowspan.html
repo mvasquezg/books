@@ -1,0 +1,63 @@
+<!--Libro:Internet & World Wide Web Como Programar 5ta edicion. 
+  Capitulo 02.-Introduccion al html5
+  Pagina 0011.-Pagina con la estructura basica html incluyendo una tabla, aplicando colspan y rowspan.
+-->
+<!Doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Tabla de HTML5 compleja 
+        </title>
+    </head>
+    <body>
+        <h1>Ejemplo de tabla: combinado de filas y columnas</h1>
+        
+        <table border="1">
+            <caption>                
+                Una Tabla de muestra m&aacute;s compleja                
+            </caption>
+
+            <thead>
+                <!--los elementos rowspan y colspan combinan el numero-->
+                <!--especificado de celdas en sentido vertical u horizontal-->
+                <tr>
+                    <!--Combina dos filas-->
+                    <th rowspan="2">
+                        <img src="../imgs/camello.jpg" width="205" height="167" alt="Camellos">
+                    </th>
+
+                    <!--Combina 4 columnas-->
+                    <th colspan="4">
+                        <strong>Comparaci&oacute;n de cam&eacute;llidos</strong>
+                        <br>
+                        Fecha proximada 10/2011
+                    </th>
+                </tr>
+
+                <tr>
+                    <th># jorobas</th>
+                    <th>Regi&oacute;n Ind&iacute;gena</th>
+                    <th>Escupe?</th>
+                    <th>Produce Lana?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Camellos (Bactrianos)</th>
+                    <td>2</td>
+                    <td>Africa/Asia</td>
+                    <td>S&iacute;</td>
+                    <td>S&iacute;</td>
+                </tr>
+                <tr>
+                    <th>Llamas</th>
+                    <td>1</td>
+                    <td>Monta&nacute;s de los andes</td>
+                    <td>S&iacute;</td>
+                    <td>S&iacute;</td>
+                </tr>
+            </tbody>     
+       </table>         
+    </body>
+</html>
