@@ -1,0 +1,35 @@
+<!--Libro:Internet & World Wide Web Como Programar 5ta edicion. 
+  Capitulo 03.-Introduccion al html5: Parte 2 Nuevos tipos de input de formularios
+  Pagina 0034.-Pagina con nuevos elementos de estructura html5, usando el elemento dataList. 
+-->
+<!Doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Elemento dataList
+        </title>
+    </head>
+    <body>
+
+        <header>
+            <h1>Data List</h1>
+        </header>
+
+        
+        <section id="idSection1">
+            <p>
+                <label for="Lista de Estados"> Estados:
+                    <input type="text" id="idTown" placeholder="Selecione un Estado" list="idTowns"/>
+                    <datalist id="idTowns">
+                        <option value="Jalisco"></option>
+                        <option value="Sonora"></option>
+                        <option value="Guerrero"></option>
+                        <option value="Yucatan"></option>
+                        <option value="Tabasco"></option>
+                    </datalist>
+                </label>    
+            </p>        
+        </section>
+    </body>
+</html>
