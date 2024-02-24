@@ -1,0 +1,18 @@
+body{
+    background-image: url(file:///home/mavg/Documents/books/InternetYLaWorldWideWebComoProgramar5Taedicion/imgs/flor.jpg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: lightgray;
+}
+
+p{
+    font-size: 18pt;
+    color: darkblue;
+    text-indent: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark{
+    font-weight: bold;
+}
