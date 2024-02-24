@@ -1,0 +1,32 @@
+<!--Libro:Internet & World Wide Web Como Programar 5ta edicion. 
+  Capitulo 04.-Introduccion a las hojas de estilo en cascada (Cascading Style Sheets, CSS)
+  Pagina 0048.-Pagina con nuevos elementos de estructura html5 y css, Hojas de estilo externa dimension de los elementos.
+-->
+<!Doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Dimension de los elementos
+        </title>
+
+        <link rel="stylesheet" type="text/css" href="./css/dimensionOfElements.css">
+        </link>
+
+    </head>
+    <body>
+        <section id="section">
+            <p style="width: 20%;">
+                &Eacute;ste es un texto que va dentro de un cuadro del veinte por ciento de la anchura de la pantalla.
+            </p>
+            
+            <p style="width: 80%; text-align: center;">
+                &Eacute;ste es un texto CENTRADO que va dentro de un cuadro, el cual se estira a lo largo del ochenta por ciento de la anchura de la pantalla.
+            </p>
+
+           <p style="width: 20%; height: 150px; overflow: scroll;">
+            &Eacute;ste cuadro solomente tiene el veinte por ciento de la anchura y una latura fija. &iquest;Qu&eacute; hacemos si se desborda? &iexcl;Ajustamos la propiedad overflow a scroll!
+           </p>
+        </section>
+    </body>
+</html>
