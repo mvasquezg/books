@@ -1,7 +1,7 @@
 /** 
  *Libro: Introducción a la programación con Java primera edición
  *Capitulo 3: Fundamentos de Java 
- *Programa 7: Uso del metodo length*/
+ *Programa 8: Uso del metodo length*/
 
 public class MethodLength{
     public static void main(String[] args){
