@@ -2,6 +2,8 @@
  *Libro: Introducción al lenguaje de programación Java. Una guía básica.
  *Capitulo 2: Sintaxis de Java
  *Programa 1: Ejemplo de documentar el codigo en java.
+ *comando para genera la documentacion desde la consola:
+ *         javadoc -d "nombre de la carpeta donde se generara la docuemtacion (sin comillas)" Programa.java
  */
 public class ExampleDocumentationComments{
     protected float x; /**@Param x coordenada x del punto */
