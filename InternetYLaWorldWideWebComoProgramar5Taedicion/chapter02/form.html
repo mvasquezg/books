@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Formularios
+        </title>
+    </head>
+
+    <body>
+        <h1>Formulario de retroalimentaci&oacute;n</h1>
+
+        <p>LLene este formulario para ayudarnos a mejorar nuestro sitio.</p>
+
+        <form method="post" action="http://www.deitel.com"> 
+            <input type="hidden" name="addressee" value="dietel@deitel.com"/>
+            <input type="hidden" name="subject" value="Formulario de retroalimentación"/>
+            <input type="hidden" name="redirect" value="basicPage.html"/>
+            
+            <p>
+                <label>Nombre: </label>
+                <input name="name" type="text" size="25" maxlength="30"/>
+            </p>
+            <p>
+                <input type="submit" value="Enviar"/>
+                <input type="reset" value="Borrar"/>
+
+            </p>
+        </form> 
+    </body>
+</html>
