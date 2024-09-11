@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario del estudiante</title>
+    </head>
+    <body>
+        <h1>
+            Formulario del estudiante
+        </h1>
+        <p></p>
+        <form method="post">
+            <p>
+                <label>Nombre del estudiante:
+                    <input type="text" name="nameStudent">
+                </label>
+            </p>
+            <p>
+                <label>Correo elect&oacute;nico:
+                    <input type="email" name="mailStudent">
+                </label>
+            </p>
+            <p>
+                <strong>Que te gust&oacute; m&aacute;s sobre el campus</strong>
+                <label>
+                    Campus:
+                    <input name="thingsLiked" type="checkbox" value="campus"/>
+                </label>
+                <label>
+                    Estudiantes:
+                    <input name="thingsLiked" type="checkbox" value="students"/>
+                </label>
+                <label>
+                    Ubicaci&oacute;n
+                    <input name="thingsLiked" type="checkbox" value="location"/>
+                </label>
+                <label>
+                    Ambiente
+                    <input name="thingsLiked" type="checkbox" value="enviroment"/>
+                </label>
+                <label>
+                    Dormitorios
+                    <input name="thingsLiked" type="checkbox" value="bedrooms"/>
+                </label>
+                <label>
+                    Deportes
+                    <input name="thingsLiked" type="checkbox" value="sports"/>
+                </label>
+            </p>
+            <p>
+                <strong>
+                    C&oacute;mo lleg&oacute; a nuestro sitio
+                </strong>    
+                <label>
+                    Amigos
+                    <input name="site" type="radio" value="friends" checked/>        
+                </label>
+                <label>
+                    Televisi&oacute;n
+                    <input name="site" type="radio" value="tv"/>        
+                </label>
+                <label>
+                    Internet
+                    <input name="site" type="radio" value="internet"/>        
+                </label>
+                <label>
+                    Otro
+                    <input name="site" type="radio" value="otro"/>        
+                </label>
+            </p>
+            <p>
+                <textarea name="comentsAditional" id="" cols="30" rows="10"></textarea>
+            </p>
+            <p>
+                <input type="submit" value="Enviar"/>
+                <input type="reset" value="Borrar"/>
+
+            </p>
+        </form>    
+        
+    </body>
+</html>
