@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Cafeter&iacute;a de los estudiantes</title>
+    </head>
+    <body>
+        <h1>Calificacion de la cafeteria de la universidad</h1>
+
+        <p></p>
+        0<meter min="0" max="10" value="7"></meter>10
+
+        <p></p>
+        <details>
+            <summary>Resultados de la encuesta</summary>
+
+            <p>
+                Los estudiantes clasifican los alimentos en la cafeter&iacute;a, en una escala del 1 al 10.
+            </p>
+        </details>
+        <p>
+            <!--<label>
+                Nombre: <input type="text" id="name" autofocus/>
+            </label>-->
+            <input type="text" id="name" placeholder="Escriba su nombre aqu&iacute;" autofocus/>
+        </p>
+
+        <p>
+            <label for="statusList">
+                Estado: <input type="text" id="statusList" placeholder="Seleccione un estado" list="status"/>
+                <datalist id="status">
+                    <option value="Excelente"></option>
+                    <option value="Muy buena"></option>
+                    <option value="Buena"></option>
+                    <option value="Regular"></option>
+                    <option value="Mala"></option>
+                </datalist>
+            </label>            
+        </p>
+        <p>
+            <label>
+                Rango: 0 <input type="range" min="0" max="100" step="1" value="0"> 100
+            </label>
+        </p>
+        <p>
+            <mark>
+                Se pidi&oacute; a los estudiantes que calificaran los alimentos de la cafeter&iacute;a en una escala
+                del 1 al 10. El resultado promedio fue 7.
+            </mark>
+        </p>
+    </body>
+</html>
