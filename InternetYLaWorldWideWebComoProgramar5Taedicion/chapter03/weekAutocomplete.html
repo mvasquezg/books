@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Autocompletado semana</title>
+    </head>
+    <body>
+        <form method="post" autocomplete="on">
+            <label for="idSearch">
+                Dia de la semana: <input type="text" placeholder="Ingres un dia de la semana" id="idSearch" list="dayWeekList">
+                <datalist id="dayWeekList">
+                    <option value="Lunes"></option>
+                    <option value="Martes"></option>
+                    <option value="Miercoles"></option>
+                    <option value="Jueves"></option>
+                    <option value="Viernes"></option>
+                    <option value="Sabado"></option>
+                    <option value="Domingo"></option>
+                </datalist>
+            </label>
+        </form>
+    </body>
+</html>
