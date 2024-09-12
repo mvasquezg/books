@@ -9,6 +9,7 @@ function calculate(){
         var number=5;
 
         if((1 > 0) && (3 == 3)){
+            
             tableBody.innerHTML+="<tr><td> (1 > 0) && (3 == 3) </td><td> Verdadero </td><td> </td></tr>";
         }else{
             tableBody.innerHTML+="<tr><td> (1 > 0) && (3 == 3) </td><td> Falso </td><td> </td></tr>";

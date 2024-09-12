@@ -16,9 +16,10 @@ void main(){
     int PRUEBA=0;
     int number=5;
 
-    printf("   Expresion logica\t\tResultado\t\tObservaciones");
+    printf("    Expresion logica\t\tResultado\t\tObservaciones");
 
     if((1 > 0) && (3 == 3)){
+        
         printf("\n\n   (1 > 0) && (3 == 3)\t\tVerdadero\n");
     }else{
         printf("\n   (1 > 0) && (3 == 3)\t\tFalso\n");

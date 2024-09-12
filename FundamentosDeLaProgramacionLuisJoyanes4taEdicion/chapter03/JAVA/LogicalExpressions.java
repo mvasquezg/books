@@ -19,6 +19,7 @@ public class LogicalExpressions{
         System.out.print("   Expresion logica\t\tResultado\t\tObservaciones");
 
         if((1 > 0) && (3 == 3)){
+            
             System.out.print("\n\n   (1 > 0) && (3 == 3)\t\tVerdadero\n");
         }else{
             System.out.print("\n   (1 > 0) && (3 == 3)\t\tFalso\n");

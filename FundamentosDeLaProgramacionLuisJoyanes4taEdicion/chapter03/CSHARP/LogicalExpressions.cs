@@ -20,6 +20,7 @@ public class LogicalExpressions{
         System.Console.Write("   Expresion logica\t\tResultado\t\tObservaciones");
 
         if((1 > 0) && (3 == 3)){
+            
             System.Console.Write("\n\n   (1 > 0) && (3 == 3)\t\tVerdadero\n");
         }/*else{
             System.Console.Write("\n   (1 > 0) && (3 == 3)\t\tFalso\n");
