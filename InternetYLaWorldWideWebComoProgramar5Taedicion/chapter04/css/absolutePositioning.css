@@ -1,0 +1,22 @@
+.backgroundImage{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.foreground{
+    position: absolute;
+    top: 25px;
+    left: 100px;
+    z-index: 2;    
+}
+
+.styleText{
+    position: absolute;
+    top: 25px;
+    left: 100px;
+    z-index: 3;
+    font-size: 20pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
