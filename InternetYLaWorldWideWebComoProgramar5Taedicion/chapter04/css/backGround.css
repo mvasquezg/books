@@ -1,0 +1,19 @@
+body{
+    background-image: url('../imgs/Cpp.JPG');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #d3d3d3;
+}
+
+p{
+    font-size: 18pt;
+    color: #00008b;
+    text-indent: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark{
+    font-weight: bold;
+}
+
