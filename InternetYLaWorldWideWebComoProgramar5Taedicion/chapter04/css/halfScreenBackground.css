@@ -1,0 +1,9 @@
+body{
+    background-image: url('../imgs/Cpp.JPG');
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 10;
+    
+}
