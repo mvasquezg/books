@@ -1,0 +1,32 @@
+@media all{
+    body{
+        background-color: #4682b4; 
+    }
+
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #98fb98;
+    }
+
+    p{
+        font-size: 12pt;
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+@media print{
+    body{
+        background-color: #ffffff;
+    }
+
+    h1{
+        color: #2e8b57;
+    }
+
+    p{
+        font-size: 14pt;
+        color: #4682b4;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
