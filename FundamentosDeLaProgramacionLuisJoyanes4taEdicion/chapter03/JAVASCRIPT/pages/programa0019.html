@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Programa 0019</title>
+        <script src="../js/bill.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Factura</h1>
+        </header>
+
+        <section>
+            <label>
+                Clave del producto: <input type="text" id="idClaveProduct"/>
+            </label>
+            <p></p>
+            <label>
+                Precio: $ <input type="text" id="idPrice"/>
+            </label>
+            <p></p>
+            <label>
+                Cantidad: <input type="text" id="idAmount"/>
+            </label>
+            <p></p>
+            <label>
+                Subtotal: $ <input type="text" id="idSubtotal" disabled="true"/>
+            </label>
+            <p></p>
+            <label>
+                IVA: $ <input type="text" id="idIVA" disabled="true"/>
+            </label>
+            <p></p>
+            <label>
+                Total: <input type="text" id="idTotal" disabled="true"/>
+            </label>
+            <p></p>
+            <label>
+                Total con Descuento del 5 por cien en compra de mas de 1000: $ <input type="text" id="idDiscount" disabled="true"/>
+            </label>
+            <p></p>
+            <input type="button" value="Calcular" id="idBtnCalculate"  onclick="calculate()">
+
+        </section>
+    </body>
+</html>
