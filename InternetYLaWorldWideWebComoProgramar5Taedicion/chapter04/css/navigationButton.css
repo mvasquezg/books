@@ -1,0 +1,15 @@
+nav{
+    border-style: dotted;
+    border-width: 3%;
+    font-weight: bold;
+    color: #ffffff;
+    border: 2px solid #4169e1;
+    text-align: center;
+    width: 10em;
+    background-color: #4169e1;
+    
+}
+
+nav:hover{
+    background-color: #ab12ef;
+}
