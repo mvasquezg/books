@@ -1,0 +1,21 @@
+header{
+    width: 200px;
+    height: 200px;
+    background-color: #dda0dd;
+    box-shadow: 25px 25px 50px #696969;
+    float: left;
+    margin-right: 120px;
+    margin-top: 40px;
+}
+
+nav{
+    width: 200px;
+    height: 200px;
+    background-color: #dda0dd;
+    float: right;
+    box-shadow: -25px -25px 50px #696969;
+}
+
+p{
+    text-align: center;
+}
