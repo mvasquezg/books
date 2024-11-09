@@ -1,0 +1,9 @@
+section{
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    text-align: center;
+    background: -webkit-radial-gradient(center, yellow, red);
+    background: -moz-radial-gradient(center, yellow, red);
+    background: radial-gradient(center, yellow, red);
+}
