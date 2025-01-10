@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa 0002</title>
+    <script src="../js/simpleEquation.js"></script>
+</head>
+<body>
+    
+    <section>
+        <h1>Programa 0002</h1>
+        <h2>Resolucion de una ecuacion de primer grado.</h2>
+        <p>
+            Si la ecuacion es ax+b=0, a y b son los datos, y las posibles soluciones son:
+            <br>a <> 0               x= -b/a
+            <br>a = 0  b <> 0   entonces "Solucion imposible"
+            <br>a = 0 b = 0     entonces "Solucion indeterminada"
+        </p>
+        
+        <p>
+            <label>
+                a: <input type="text" id="idNumber1">
+            </label>
+        </p>
+        <p>
+            <label>
+                b: <input type="text" id="idNumber2">
+            </label>
+        </p>
+        <p>
+            <label id="idMessage">
+                
+            </label>
+        </p>
+        
+        <p></p>
+        <p></p><input type="button" id="idBtnCalculate" value="Calcular" onclick="calculate()">
+    </section>
+</body>
+</html>
