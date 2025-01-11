@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa 0005</title>
+    <script src="../js/leapYear.js"></script>
+</head>
+<body>
+    
+    <section>
+        <h1>Año bisiesto</h1>
+        <p>
+            Regla para obtener el año bisiesto:
+            <br>1.-Todos los año son divisibles entre 4.
+            <br>2.-Aquellos años que son divisibles entre 4, pero no entre 100, son bisiestos.
+            <br>3.-Los años que son divisibles entre 100, pero no entre 400, no son bisiestos.
+            <br>4.-Sin embargo, los años divisibles entre 100 y entre 400 sí que son bisiestos.
+        </p>
+        <label>
+            Numero: <input type="text" id="idYear">
+        </label>
+        <p>
+            <label id="idMessage">
+                
+            </label>
+        </p>
+        
+        <p></p><input type="button" id="idBtnCalculate" value="Calcular" onclick="calculate()">
+    </section>
+</body>
+</html>
