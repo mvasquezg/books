@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa 0006</title>
+    <script src="../js/areaTriangle.js"></script>
+</head>
+<body>
+    
+    <section>
+        <h1>Area de un triangulo</h1>
+        <p>
+            Programa que nos calcule el area de un triangulo conociendo sus lados.<br> 
+            <br>La estructura selectiva se utiliza para el control de entrada de datos del programa.<br>
+            <br>Nota: Area = sqrt(P * (P-a) * (P-b) * (P-c))<br>
+            <br>P = (a + b + c)/2<br>
+            <br>Donde P>a y P>b y P>c, sino se cumple la condicion entonces no es un triangulo.<br>
+        </p>
+        <label>
+            a: <input type="text" id="idA">
+        </label>
+        <p></p>
+        <label>
+            b: <input type="text" id="idB">
+        </label>
+        <p></p>
+        <label>
+            c: <input type="text" id="idC">
+        </label>
+        <p></p>
+        <p>
+            <label id="idMessage">
+                
+            </label>
+        </p>
+        
+        <p></p><input type="button" id="idBtnCalculate" value="Calcular" onclick="calculate()">
+    </section>
+</body>
+</html>
