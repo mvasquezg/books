@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa 0011</title>
+    <script src="../js/calculateDayOfWeek.js"></script>
+</head>
+<body>
+    
+    <section id="idSection">
+        <h1>Calcular que d&iacute;a de la semana es hoy</h1>
+        <p>
+            Programa que pregunta el dia que inicia el mes:<br><br>lunes, martes, miercoles, Jueves, viernes sabado o domingo<br>calcula que dia de la semana es hoy.<br>
+            Ingrese la inicial del primer dia del mes 
+            <br><br>L (Lunes)<br>M (Martes)<br>X (MIercoles)<br> (Jueves)<br>V (Viernes)<br>S (Sabado)<br>D (Domingo)
+           </p>
+        <label>
+            1er D&iacute;a del mes: <input type="text" id="idDayChar">
+        </label>
+        <p></p>
+        <label>
+            Fecha de hoy: <input type="text" id="idNow">
+        </label>
+        
+        
+        <p></p><input type="button" id="idBtnCalculate" value="Calcular" onclick="calculate()">
+    </section>
+</body>
+</html>
