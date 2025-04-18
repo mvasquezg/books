@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa 0016</title>
+    <script src="../js/ticketPrice.js"></script>
+</head>
+<body>
+    
+    <section id="idSection">
+        <h1>Programa que determina el precio de un boleto de ida y vuelta en un avion</h1>
+        <p>
+            Programa que determina el precio de un boleto de ida y vuelta en un avion, conociendo la distancia a recorrer "
+            y sabiendo que si el numero de dias de estancia es\nsuperior a 7 dias y la distancia es superior a 800 km" 
+             el boleto tiene una reduccion del 30 por 100. El precio por Km es de 2.5 euros"
+        </p>
+        <p></p>
+        <label>
+            KM: <input type="text" id="idKm">
+        </label>
+        <p></p>
+        <label>
+            Dias: <input type="text" id="idDays">
+        </label>
+    </section>
+    <p></p>
+    <input type="button" id="idBtnCalculate" value="Calcular" onclick="calculate()">
+</body>
+</html>
