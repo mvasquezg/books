@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa 0032</title>
+    <script src="../js/americanGrade.js"></script>
+</head>
+<body>
+    
+    <section>
+        <h1>Calificacion americana</h1>
+        <p>
+           Programa que acepte una calificación numérica del estudiante (0-100), convierta esta calificación a su equivalente en letra y visualice la calificación correspondiente en letra.
+            <br><br>Tabla de comparación.
+            
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>
+                            Grado numérico
+                        </th>
+                        <th>
+                            Grado en letra
+                        </th>    
+                    </tr>    
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Grado mayor o igual a 90
+                        </td>
+                        <td>
+                            A    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Menor de 90 pero mayor o igual a 80    
+                        </td>
+                        <td>
+                            B    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Menor de 80 pero mayor o igual a 70
+                        </td>
+                        <td>
+                            C   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Menor de 70 pero mayor o igual a 69
+                        </td>
+                        <td>
+                            D 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Menor de 69
+                        </td>
+                        <td>
+                            F
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+           
+        </p>
+        
+        <p>
+           <label>
+                Calificacion: <input type="text" id="idCal">
+           </label>     
+        </p>
+        <p>
+            <label id="idMessage">
+                
+            </label>
+        </p>
+        
+        <p></p><input type="button" id="idBtnCalculate" value="Calcular" onclick="calculate()">
+    </section>
+</body>
+</html>
