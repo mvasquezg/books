@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa0007</title>
+
+    <script src="../JS/limite.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Encontrar el entero positivo más pequeño</h1>
+    </header>
+    
+    <section>
+        <label>
+            Encontrar el entero positivo más pequeño (num) para el cual la suma 1+2+3+...+num es menor o igual que límite.
+            <br>1. Introducir limite.
+            <br>2. Inicializar num y suma a 0.
+            <br>3. Repetir las acciones siguientes hasta que suma > limite
+                • incrementar num en 1,
+                • añadir num a suma.
+            <br>4. Visualizar num y suma.    
+            <br>Numero:  <input type="text" id="idNum">
+        </label>
+
+        <p>
+          <label id="idLblMessage">
+
+          </label>  
+        </p>
+        <p>
+            <input type="button" id="idBtnCalculate" value="Calcular" onclick="calculate()">
+        </p>
+    </section>
+</body>
+</html>
