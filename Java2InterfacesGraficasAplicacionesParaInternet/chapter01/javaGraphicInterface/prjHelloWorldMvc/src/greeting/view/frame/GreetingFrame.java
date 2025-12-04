@@ -16,15 +16,12 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 
 public class GreetingFrame extends JFrame implements ActionListener{
-    //GreetingPanelLabel grPanelLabel=new GreetingPanelLabel();
-    //GreetingPanelButton grPanelButton=new GreetingPanelButton();
-
+    
     private JPanel jPanelLabel=new JPanel();
     private JPanel jPabelButton=new JPanel();
 
     private JLabel jLblLabel=new JLabel("Etiqueta");
     private JButton jBtnExecute=new JButton("Has clic aquí");
-
 
     public GreetingFrame(){
         setLayout(new GridLayout(2, 1));
@@ -36,9 +33,6 @@ public class GreetingFrame extends JFrame implements ActionListener{
         jPabelButton.add(jBtnExecute);
 
         jBtnExecute.addActionListener(this);
-
-        //add(grPanelLabel);
-        //add(grPanelButton);
 
         add(jPanelLabel);
         add(jPabelButton);
