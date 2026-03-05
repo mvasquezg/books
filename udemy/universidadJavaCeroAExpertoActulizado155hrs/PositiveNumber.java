@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class PositiveNumber{
     public static void main(String[] args){
         Scanner in=new Scanner(System.in);
-        int number=0;
+        int number;
 
         System.out.print("Ingresa un numero: ");
         number=in.nextInt();
