@@ -6,5 +6,6 @@ public class FirstFunction {
 
     public static void main(String[] args) {
         saludar("Hola desde Java");
+        saludar("Adios");
     }
 }
