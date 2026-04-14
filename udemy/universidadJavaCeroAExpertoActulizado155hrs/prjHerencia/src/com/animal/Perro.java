@@ -5,4 +5,8 @@ public class Perro extends Animal {
     public void hacerSonido(){
         System.out.println("Puedo ladrar");
     }
+
+    public void dormir(){
+        System.out.println("Duermo 15 horas al dia");
+    }
 }

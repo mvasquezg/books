@@ -16,8 +16,5 @@ public class AnimalApp {
         animal2.dormir();
         animal2.hacerSonido();
 
-
-
-
     }
 }
