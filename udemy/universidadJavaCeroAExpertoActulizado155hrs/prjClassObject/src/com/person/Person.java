@@ -2,6 +2,7 @@ package prjClassObject.src.com.person;
               
 public class Person{
     public static int countPerson = 0;
+    public static int id=0;
 
     private String namePerson;
     private String lastNamePerson;
@@ -13,7 +14,9 @@ public class Person{
         this.namePerson=namePerson;
         this.lastNamePerson=lastNamePerson;
         //incremenetar el atributo estatico
-        Person.countPerson++;
+        //Person.countPerson++;
+        
+        this.id=++Person.countPerson;
     }
 
     public void setNamePerson(String namePerson){
@@ -28,8 +31,12 @@ public class Person{
         return this.lastNamePerson;
     }
 
+    public Integer getId(){
+        return this.id;
+    }
+
     @Override
     public String toString(){
-        return "Nombre: "+this.namePerson+", Apellido: "+lastNamePerson;
+        return "IdPersona: "+this.id+", Nombre: "+this.namePerson+", Apellido: "+lastNamePerson;
     }
 }
