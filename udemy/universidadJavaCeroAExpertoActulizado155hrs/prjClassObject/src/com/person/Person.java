@@ -1,8 +1,8 @@
 package prjClassObject.src.com.person;
               
 public class Person{
-    public static int countPerson = 0;
-    public static int id=0;
+    private static int countPerson = 0;
+    private static int id=0;
 
     private String namePerson;
     private String lastNamePerson;
@@ -38,5 +38,9 @@ public class Person{
     @Override
     public String toString(){
         return "IdPersona: "+this.id+", Nombre: "+this.namePerson+", Apellido: "+lastNamePerson;
+    }
+
+    public static int getCountPerson(){
+        return Person.countPerson;
     }
 }
