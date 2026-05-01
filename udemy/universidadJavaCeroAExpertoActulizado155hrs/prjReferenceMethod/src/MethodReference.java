@@ -1,6 +1,7 @@
 package prjReferenceMethod.src;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MethodReference {
@@ -16,5 +17,10 @@ public class MethodReference {
         dayOfWeek.add("Domingo");
 
         dayOfWeek.forEach(System.out::println);
+
+        System.out.println("---- ---- ---- ---- ---- ---- ----  --- ---- ---- ---- ---- ---- ---- ----\nListado de nombres");
+        List<String> names=Arrays.asList("Pedro", "Ivonne", "Nohemi", "Paola");
+        
+        names.forEach(System.out::println);
     }   
 }
