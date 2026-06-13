@@ -1,0 +1,18 @@
+Proyectos java desde Cero
+
+Aqui estaran los proyectos java creados desde Cero, sin framewors ni herramienstas adicionales.
+
+//Crear proyecto
+Hacer click en File>>New>>JavaProyect
+
+//Agregar las librerias MySql para agregar la conexion a la BD
+hacer click derecho sobre la carperta del proyecto e ir a Propiedades -Properties
+
+prjProyect>>Click Derecho>>Properties
+
+//En la opcion Java Build Path en la opción Libraries hacer click en la opcion Add External JARs...
+
+Java Build Path>>Libraries>>Add External JARS>>"Buscar la ruta donde esten guardado los jars mysql  " 
+
+
+
