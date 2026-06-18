@@ -9,6 +9,5 @@ public class HotelReservationApp {
 		RoomHotelFrame frmRoom=new RoomHotelFrame();
 		
 		frmRoom.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 	}
 }
