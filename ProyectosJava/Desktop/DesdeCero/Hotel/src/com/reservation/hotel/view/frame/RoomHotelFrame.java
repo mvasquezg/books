@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 import com.reservation.hotel.view.panels.room.RoomMainPanel;
 
 public class RoomHotelFrame extends JFrame{
+	
+	private static final long serialVersionUID = -499229605463088406L;
+	
 	private RoomMainPanel roomMainPanel=new RoomMainPanel();
 	private double percentScreen=0.65;
 	
