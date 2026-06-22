@@ -30,7 +30,5 @@ public class SearchPanel extends JPanel{
 		add(jBtnDelete);
 		add(jBtnExit);
 		
-		
-		
 	}
 }
