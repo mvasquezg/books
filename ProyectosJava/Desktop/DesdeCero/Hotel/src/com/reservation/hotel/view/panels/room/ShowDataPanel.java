@@ -7,15 +7,19 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.reservation.hotel.controller.QuerysRoom;
+//import com.reservation.hotel.controller.QuerysRoom;
 
 public class ShowDataPanel extends JPanel{
-	private SearchPanel searhPanel=new SearchPanel();
-	private TablePanel tablePanel=new TablePanel();
-	//private QuerysRoom queryTotal=new QuerysRoom();
-	
+	private static final long serialVersionUID = -2784717459731900318L;
+	private SearchPanel searchPanel=new SearchPanel();
+	private TablePanel tablePanel;
+		
 	private JLabel jLblTotal=new JLabel("Total de Registros: ");
-	public ShowDataPanel() {
+	
+	public ShowDataPanel(InsertDataPanel panelInput) {
+		//this.panelInput=panelInput;
+		tablePanel=new TablePanel(panelInput);
+		
 		setLayout(new BorderLayout());
 		
 		//Assign color the panel
@@ -24,10 +28,41 @@ public class ShowDataPanel extends JPanel{
 		//Colorar titulo al panel
 		setBorder(BorderFactory.createTitledBorder("Listado de Habitaciones"));
 		
-		add(searhPanel, BorderLayout.NORTH);
-		add(tablePanel, BorderLayout.CENTER);
-		//jLblTotal.setText("Total de registros: "+queryTotal.getRegisterTotal());
-		add(jLblTotal, BorderLayout.SOUTH);
+		add(searchPanel, BorderLayout.NORTH);
 		
+		add(tablePanel, BorderLayout.CENTER);
+		add(jLblTotal, BorderLayout.SOUTH);	
 	}
+	
+	//Methods Set
+	public void setSearchPanel(SearchPanel searchPanel) {
+		this.searchPanel = searchPanel;
+	}
+	
+	public void setTablePanel(TablePanel tablePanel) {
+		this.tablePanel = tablePanel;
+	}
+	
+	public void setjLblTotal(JLabel jLblTotal) {
+		this.jLblTotal = jLblTotal;
+	}
+	
+	//Method Get
+	public TablePanel getTablePanel() {
+		return tablePanel;
+	}
+	
+	public SearchPanel getSearchPanel() {
+		return searchPanel;
+	}
+	
+	public JLabel getjLblTotal() {
+		return jLblTotal;
+	}
+	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 }
