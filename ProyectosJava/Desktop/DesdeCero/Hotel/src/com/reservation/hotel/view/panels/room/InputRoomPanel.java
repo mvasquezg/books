@@ -29,29 +29,21 @@ public class InputRoomPanel extends JPanel{
 	//Cajas de Texto
 	private JTextField jTxtIdRoom = new JTextField(20);
 	private JTextField jTxtRoomNumber = new JTextField(20);
-	
-	//private JTextField jTxtFloor = new JTextField();
 	private JComboBox jCbxFloor=new JComboBox(arrayFloor);
-	
 	private JTextArea jTxtADescription = new JTextArea();
-	
 	private JTextArea jTxtACharacteristics = new JTextArea();
 	private JTextField jTxtPriceNight = new JTextField(20);
-	//private JTextField jTxtStatusRoom = new JTextField(20);
 	private JComboBox jCbxStatusRoom=new JComboBox(arrayStatusRoom);
-	
-	//private JTextField jTxtRoomType = new JTextField(20);
 	private JComboBox jCbxRoomType = new JComboBox(arrayRoomType);
-	
+
 	public InputRoomPanel() {
 		disableInputs();
+		
 		//Aplicando transparencia
 		setOpaque(false);
 		setBackground(new Color(0, 0,  0, 0));
 		
-		
 		setLayout(new GridLayout(8, 2));
-		
 		
 		add(jLblIdRoom);
 		jTxtIdRoom.setEditable(false);
@@ -61,31 +53,24 @@ public class InputRoomPanel extends JPanel{
 		add(jTxtRoomNumber);
 		
 		add(jLblFloor);
-		//add(jTxtFloor);
 		add(jCbxFloor);
 		
 		add(jLblDescription);
-		//add(jTxtDescription);
 		add(jTxtADescription);
 		
 		add(jLblCharacteristics);
-		//add(jTxtCharacteristics);
 		add(jTxtACharacteristics);
 
-		
 		add(jLblPriceNight);
 		add(jTxtPriceNight);
 		
 		add(jLblStatusRoom);
-		//add(jTxtStatusRoom);
 		add(jCbxStatusRoom);
 		
 		add(jLblRoomType);
-		//add(jTxtRoomType);
 		add(jCbxRoomType);
 	}//end constructor
 
-	
 	//Method set
 	public void setjTxtIdRoom(JTextField jTxtIdRoom) {
 		this.jTxtIdRoom = jTxtIdRoom;
@@ -118,7 +103,6 @@ public class InputRoomPanel extends JPanel{
 	public void setjCbxRoomType(JComboBox jCbxRoomType) {
 		this.jCbxRoomType = jCbxRoomType;
 	}
-	
 	
 	//Method get
 	public JTextField getjTxtIdRoom() {
@@ -170,6 +154,7 @@ public class InputRoomPanel extends JPanel{
 	}
 	
 	public void cleanInputs(){
+      getjTxtIdRoom().setText("");
       getjTxtRoomNumber().setText("");
       getjCbxFloor().setSelectedIndex(0); 
       getjTxtRoomNumber().setText("");
@@ -178,6 +163,5 @@ public class InputRoomPanel extends JPanel{
       getjTxtPriceNight().setText("");
       getjCbxStatusRoom().setSelectedIndex(0); 
       getjCbxRoomType().setSelectedIndex(0); 
-    } 
-	
+    } 	
 }
