@@ -17,8 +17,7 @@ public class ShowDataPanel extends JPanel{
 	private JLabel jLblTotal=new JLabel("Total de Registros: ");
 	
 	public ShowDataPanel(InsertDataPanel panelInput) {
-		//this.panelInput=panelInput;
-		tablePanel=new TablePanel(panelInput);
+	tablePanel=new TablePanel(panelInput);
 		
 		setLayout(new BorderLayout());
 		
