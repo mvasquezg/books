@@ -19,42 +19,44 @@ public class TablePanel extends JPanel{
 	private DefaultTableModel modeloTabla;
 	
 	//private JTable tableRoom=new JTable(modeloTabla);
-	private JTable tableRoom;
+	private JTable tableRoom=new JTable();
 	
 	public TablePanel() {
 		//Aplicando transparencia
 		setOpaque(false);
 		setBackground(new Color(0, 0,  0, 0));
 		
-		//hideColumns();
+		setModeloTabla(queryRoom.showTable(""));
 		
-		/*tableRoom.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				tableRoomMouseCliked();
-			}
-			
-			
-		});*/
-		modeloTabla=queryRoom.showTable("");
-		tableRoom=new JTable(modeloTabla);
 		
-		add(new JScrollPane(tableRoom));
+		setTableRoom(getModeloTabla());
+		
+		getModeloTabla();
+		
+		hideColumns();
+		
+		add(new JScrollPane(getTableRoom()));
 	}
 	
 	private void hideColumns() {
-		tableRoom.getColumnModel().getColumn(0).setMaxWidth(0);
-		tableRoom.getColumnModel().getColumn(0).setMinWidth(0);
-		tableRoom.getColumnModel().getColumn(0).setPreferredWidth(0);
-		
+		getTableRoom().getColumnModel().getColumn(0).setMaxWidth(0);
+		getTableRoom().getColumnModel().getColumn(0).setMinWidth(0);
+		getTableRoom().getColumnModel().getColumn(0).setPreferredWidth(0);	
 	}
-	
-	private void tableRoomMouseCliked() {
-		//int rowActual=tableRoom.rowAtPoint();
-		
-		//if(rowActual>=0) {
-			JOptionPane.showMessageDialog(tableRoom, "hola Mundo");
-		//}
-		
-		
+
+	public DefaultTableModel getModeloTabla() {
+		return modeloTabla;
+	}
+
+	public void setModeloTabla(DefaultTableModel modeloTabla) {
+		this.modeloTabla = modeloTabla;
+	}
+
+	public JTable getTableRoom() {
+		return tableRoom;
+	}
+
+	public void setTableRoom(DefaultTableModel tableRoom) {
+		this.tableRoom.setModel(tableRoom); 
 	}
 }
