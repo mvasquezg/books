@@ -11,6 +11,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import com.reservation.hotel.controller.QuerysRoom;
+import com.reservation.hotel.controller.RowClickedInTable;
 
 public class TablePanel extends JPanel{
 	private QuerysRoom queryRoom=new QuerysRoom();
@@ -21,7 +22,7 @@ public class TablePanel extends JPanel{
 	//private JTable tableRoom=new JTable(modeloTabla);
 	private JTable tableRoom=new JTable();
 	
-	public TablePanel() {
+	public TablePanel(InsertDataPanel insertPanel) {
 		//Aplicando transparencia
 		setOpaque(false);
 		setBackground(new Color(0, 0,  0, 0));
@@ -33,6 +34,9 @@ public class TablePanel extends JPanel{
 		getModeloTabla();
 		
 		hideColumns();
+		
+		getTableRoom().addMouseListener(new RowClickedInTable(this, insertPanel));
+		
 		
 		add(new JScrollPane(getTableRoom()));
 	}
