@@ -10,11 +10,11 @@ import com.reservation.hotel.controller.ButtonRoomFunctionsController;
 public class ButtonRoomPanel extends JPanel{
 	private static final long serialVersionUID = -1365304798766586098L;
 
-	private JButton jBtSave=new JButton("Guardar");
-	private JButton jBtCancel=new JButton("Cancelar");
+	private JButton jBtnSave=new JButton("Guardar");
+	private JButton jBtnCancel=new JButton("Cancelar");
 	private JButton jBtNew=new JButton("Nuevo");
 	
-	private InputRoomPanel inputPanel=new InputRoomPanel();
+	private InputRoomPanel inputPanel;
 	
 	public ButtonRoomPanel() {
 		
@@ -25,30 +25,38 @@ public class ButtonRoomPanel extends JPanel{
 		setOpaque(false);
 		setBackground(new Color(0, 0,  0, 0));
 		
-		jBtNew.addActionListener(new ButtonRoomFunctionsController(inputPanel, jBtNew, jBtSave, jBtCancel));
+		//this.inputPanel=inputPanel;
+		setInputPanel(inputPanel);
+		
+		jBtNew.setEnabled(true);
+		
+		jBtNew.addActionListener(new ButtonRoomFunctionsController(this, this.inputPanel, jBtNew, jBtnSave, jBtnCancel));
 		
 		add(jBtNew);
 		
-		jBtSave.addActionListener(new ButtonRoomFunctionsController(inputPanel, jBtSave, jBtSave, jBtCancel));
-		add(jBtSave);
+		jBtnSave.setEnabled(false);
+		jBtnSave.addActionListener(new ButtonRoomFunctionsController(this, this.inputPanel, jBtnSave, jBtnSave, jBtnCancel));
+		add(jBtnSave);
 		
-		add(jBtCancel);
+		jBtnCancel.setEnabled(false);
+		jBtnCancel.addActionListener(new ButtonRoomFunctionsController(this, this.inputPanel, jBtnSave, jBtnSave, jBtnCancel));
+		add(jBtnCancel);
 	}
 
 	public JButton getjBtSave() {
-		return jBtSave;
+		return jBtnSave;
 	}
 
 	public void setjBtSave(JButton jBtSave) {
-		this.jBtSave = jBtSave;
+		this.jBtnSave = jBtSave;
 	}
 
 	public JButton getjBtCancel() {
-		return jBtCancel;
+		return jBtnCancel;
 	}
 
-	public void setjBtCancel(JButton jBtCancel) {
-		this.jBtCancel = jBtCancel;
+	public void setjBtCancel(JButton jBtnCancel) {
+		this.jBtnCancel = jBtnCancel;
 	}
 
 	public JButton getjBtNew() {
@@ -65,5 +73,5 @@ public class ButtonRoomPanel extends JPanel{
 
 	public void setInputPanel(InputRoomPanel inputPanel) {
 		this.inputPanel = inputPanel;
-	}	
+	}
 }
