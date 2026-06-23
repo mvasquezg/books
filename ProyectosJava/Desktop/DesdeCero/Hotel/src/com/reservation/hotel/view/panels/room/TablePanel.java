@@ -28,7 +28,6 @@ public class TablePanel extends JPanel{
 		
 		setModeloTabla(queryRoom.showTable(""));
 		
-		
 		setTableRoom(getModeloTabla());
 		
 		getModeloTabla();
