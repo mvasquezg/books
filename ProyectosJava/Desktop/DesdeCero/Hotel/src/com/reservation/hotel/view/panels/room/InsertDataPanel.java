@@ -10,8 +10,8 @@ public class InsertDataPanel extends JPanel{
 	
 	private static final long serialVersionUID = 6631325402132818190L;
 
-	private InputRoomPanel inputPanel=new InputRoomPanel();
-	private ButtonRoomPanel buttonPanel;
+	private InputRoomPanel inputRoomPanel=new InputRoomPanel();
+	private ButtonRoomPanel buttonRoomPanel;
 		
 	public InsertDataPanel() {
 		setLayout(new BorderLayout());
@@ -22,24 +22,32 @@ public class InsertDataPanel extends JPanel{
 		//Colorar titulo al panel
 		setBorder(BorderFactory.createTitledBorder("Registro de Habitaciones"));
 		
-		add(inputPanel, BorderLayout.NORTH);
-		buttonPanel=new ButtonRoomPanel(inputPanel);
-		add(buttonPanel, BorderLayout.SOUTH);
+		add(getInputRoomPanel(), BorderLayout.NORTH);
+		
+		setButtonRoomPanel(new ButtonRoomPanel(getInputRoomPanel()));;
+		add(getButtonRoomPanel(), BorderLayout.SOUTH);
 	}
 
-	public InputRoomPanel getInputPanel() {
-		return inputPanel;
+	public InputRoomPanel getInputRoomPanel() {
+		return inputRoomPanel;
 	}
 
-	public void setInputPanel(InputRoomPanel inputPanel) {
-		this.inputPanel = inputPanel;
+	public void setInputRoomPanel(InputRoomPanel inputRoomPanel) {
+		this.inputRoomPanel = inputRoomPanel;
 	}
 
-	public ButtonRoomPanel getButtonPanel() {
-		return buttonPanel;
+	public ButtonRoomPanel getButtonRoomPanel() {
+		return buttonRoomPanel;
 	}
 
-	public void setButtonPanel(ButtonRoomPanel buttonPanel) {
-		this.buttonPanel = buttonPanel;
-	}	
+	public void setButtonRoomPanel(ButtonRoomPanel buttonRoomPanel) {
+		this.buttonRoomPanel = buttonRoomPanel;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	
+		
 }
