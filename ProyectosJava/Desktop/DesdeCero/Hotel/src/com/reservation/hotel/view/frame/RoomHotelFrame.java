@@ -12,7 +12,8 @@ public class RoomHotelFrame extends JFrame{
 	private static final long serialVersionUID = -499229605463088406L;
 	
 	private RoomMainPanel roomMainPanel=new RoomMainPanel();
-	private double percentScreen=0.65;
+	//private double percentScreen=0.65;
+	private double percentScreen;
 	
 	public RoomHotelFrame() {
 		Toolkit toolkit=Toolkit.getDefaultToolkit();
@@ -21,8 +22,9 @@ public class RoomHotelFrame extends JFrame{
 		setTitle("Habitaciones");
 		
 		//Calculte size screen
-		int hight=(int) (newScreenSize.height*percentScreen);
-		int width=(int) (newScreenSize.width*percentScreen);
+		setPercentScreen(0.65);
+		int hight=(int) (newScreenSize.height*getPercentScreen());
+		int width=(int) (newScreenSize.width*getPercentScreen());
 		
 		//Size frame
 		setSize(width, hight);
@@ -32,6 +34,25 @@ public class RoomHotelFrame extends JFrame{
 		
 		setVisible(true);
 		
-		add(roomMainPanel);
+		add(getRoomMainPanel());
 	}
+
+	//Methods get
+	public RoomMainPanel getRoomMainPanel() {
+		return roomMainPanel;
+	}
+
+	public double getPercentScreen() {
+		return percentScreen;
+	}
+	
+	//Methods set
+	public void setRoomMainPanel(RoomMainPanel roomMainPanel) {
+		this.roomMainPanel = roomMainPanel;
+	}	
+
+	public void setPercentScreen(double percentScreen) {
+		this.percentScreen = percentScreen;
+	}
+	
 }
