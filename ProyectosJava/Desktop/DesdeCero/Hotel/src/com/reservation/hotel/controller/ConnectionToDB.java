@@ -27,7 +27,6 @@ public class ConnectionToDB {
 			this.connectToDB=DriverManager.getConnection(connectionModel.getURL()+":"+connectionModel.getPORT()+"/"+connectionModel.getBD(), connectionModel.getUSER(), connectionModel.getPASSWORD());
 		}catch(Exception e) {
 			JOptionPane.showConfirmDialog(null, e);
-			
 		}
 		return this.connectToDB;
 	}	
