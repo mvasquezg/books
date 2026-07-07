@@ -17,66 +17,56 @@ import com.reservation.hotel.view.panels.room.TablePanel;
 
 public class ButtonRoomFunctionsController implements ActionListener{
 	
-	//private InsertDataPanel insertPanel;
-	private ButtonRoomPanel butonPanel;
+	private ButtonRoomPanel buttonRoomPanel;
 	private InputRoomPanel inputRoomPanel;
 	
-	private DefaultTableModel modeloDeDatos;
+	private TablePanel tablePanel;
 	
 	private QuerysRoom queryRoom=new QuerysRoom();
 	private RoomBean room=new RoomBean();	
 	
-	private TablePanel panelTable;
-	
-	
-	private JButton jBtnNew, jBtnSave, jBtnCancel;
-	
-	public ButtonRoomFunctionsController(InputRoomPanel inputRoomPanel, ButtonRoomPanel butonPanel) {
-		this.inputRoomPanel=inputRoomPanel;
+	public ButtonRoomFunctionsController() {}
+	public ButtonRoomFunctionsController(ButtonRoomPanel buttonRoomPanel, InputRoomPanel inputRoomPanel) {
 		
-		this.inputRoomPanel=inputRoomPanel;	
+		setButtonRoomPanel(buttonRoomPanel);
+		setInputRoomPanel(inputRoomPanel);
 	}
-	
-	public ButtonRoomFunctionsController(InputRoomPanel inputRoomPanel, ButtonRoomPanel butonPanel, TablePanel paneltable) {
-		this.inputRoomPanel=inputRoomPanel;
-		
-		this.butonPanel=butonPanel;
-		
-		this.panelTable=paneltable;
-	}
-	
-	public ButtonRoomFunctionsController(ButtonRoomPanel btnPanel,InputRoomPanel inputRoomPanel, JButton jBtnNew, JButton jBtnSave, JButton jBtnCancel) {
-		this.inputRoomPanel=inputRoomPanel;
-		this.butonPanel=btnPanel;
-		this.jBtnNew=jBtnNew; 
-		this.jBtnSave=jBtnSave;
-		this.jBtnCancel=jBtnCancel;
-
-	}
-	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getActionCommand().equalsIgnoreCase("Nuevo")) {
-			//this.insertPanel.getInputPanel().enableInputs();
-			//this.insertPanel.getInputPanel().cleanInputs();
+			getInputRoomPanel().cleanInputs();
+			getInputRoomPanel().enableInputs();
 			
-			this.inputRoomPanel.enableInputs();
-			this.inputRoomPanel.cleanInputs();
 			
-			//Estatus de los bonote al oprimir nuevo
-			getButonPanel().getjBtNew().setEnabled(false);
+			getButtonRoomPanel().getjBtnNew().setEnabled(false);
 			
-			getButonPanel().getjBtSave().setText("Guardar");
-			getButonPanel().getjBtSave().setEnabled(true);
+			getButtonRoomPanel().getjBtnSave().setText("Guardar");
+			getButtonRoomPanel().getjBtnSave().setEnabled(true);
 			
-			getButonPanel().getjBtCancel().setEnabled(true);
+			getButtonRoomPanel().getjBtnCancel().setEnabled(true);
 			
 			
 		}else if(e.getActionCommand().equalsIgnoreCase("Guardar")) {
 			
 			if(getRoomFill()!=null) {
+				getQueryRoom().insertRoom(getRoomFill());
+			
+				getInputRoomPanel().cleanInputs();
+				getInputRoomPanel().disableInputs();
+			
+				getButtonRoomPanel().getjBtnNew().setEnabled(true);
+			
+				getButtonRoomPanel().getjBtnSave().setEnabled(false);
+				getButtonRoomPanel().getjBtnCancel().setEnabled(false);
+			}
+			
+			
+			
+			
+			
+			/*if(getRoomFill()!=null) {
 				boolean insertDatBase=queryRoom.insertRoom(getRoomFill());
 				System.out.println(queryRoom.showTable("").getRowCount());
 				
@@ -106,12 +96,12 @@ public class ButtonRoomFunctionsController implements ActionListener{
 			}else {
 				//JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(), "Verifica los datos, Falta alguno por llenar");
 				JOptionPane.showMessageDialog(this.inputRoomPanel, "Verifica los datos, Falta alguno por llenar");
-			}
+			}*/
 			
 			
 			
 		}else if(e.getActionCommand().equalsIgnoreCase("Actualizar")) {
-			if(getRoomFill()!=null) {
+			/*if(getRoomFill()!=null) {
 				boolean updateDataBase=queryRoom.updateRoom(getRoomFill());
 				
 				if(updateDataBase) {
@@ -133,143 +123,109 @@ public class ButtonRoomFunctionsController implements ActionListener{
 				//JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(), "Verifica los datos, Falta alguno por llenar");
 				JOptionPane.showMessageDialog(this.inputRoomPanel, "Verifica los datos, Falta alguno por llenar");
 				
-			}
+			}*/
 		}else if(e.getActionCommand().equalsIgnoreCase("Cancelar")) {
 			
-			this.inputRoomPanel.cleanInputs();
-			this.inputRoomPanel.disableInputs();
+			getInputRoomPanel().cleanInputs();
+			getInputRoomPanel().disableInputs();
 			
-			getButonPanel().getjBtNew().setEnabled(true);
 			
-			getButonPanel().getjBtSave().setEnabled(false);
-			getButonPanel().getjBtCancel().setEnabled(false);
+			getButtonRoomPanel().getjBtnNew().setEnabled(true);
+			
+			getButtonRoomPanel().getjBtnSave().setText("Guardar");
+			getButtonRoomPanel().getjBtnSave().setEnabled(false);
+			
+			getButtonRoomPanel().getjBtnCancel().setEnabled(false);
 			
 		}
 	}
 	
 	public RoomBean getRoomFill() {
-		/*if(!this.insertPanel.getInputPanel().getjTxtIdRoom().getText().equalsIgnoreCase("")) {
-			room.setIdRoom(Integer.parseInt(this.insertPanel.getInputPanel().getjTxtIdRoom().getText()));
+		
+		if(!getInputRoomPanel().getjTxtIdRoom().getText().equalsIgnoreCase("")) {
+			room.setIdRoom(Integer.parseInt(getInputRoomPanel().getjTxtIdRoom().getText()));
 		}
 		
-		if(!this.insertPanel.getInputPanel().getjTxtRoomNumber().getText().equals("")) {
-			room.setRoomNumber(this.insertPanel.getInputPanel().getjTxtRoomNumber().getText());
+		if(!getInputRoomPanel().getjTxtRoomNumber().getText().equals("")) {
+			room.setRoomNumber(getInputRoomPanel().getjTxtRoomNumber().getText());
 		}else {
-			JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(),"El campo numero esta vacio");
+			JOptionPane.showMessageDialog(getInputRoomPanel(),"El campo numero esta vacio");
 		}
 	
-		if(!this.insertPanel.getInputPanel().getjCbxFloor().getSelectedItem().equals("Seleccione un piso")) {
-			room.setFloor((String) this.insertPanel.getInputPanel().getjCbxFloor().getSelectedItem());
+		if(!getInputRoomPanel().getjCbxFloor().getSelectedItem().equals("Seleccione un piso")) {
+			room.setFloor((String) getInputRoomPanel().getjCbxFloor().getSelectedItem());
 		
 		}else {
-			JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(),"No ha seleccionado un piso.");
+			JOptionPane.showMessageDialog(getInputRoomPanel(),"No ha seleccionado un piso.");
 		}
 	
-		if(!this.insertPanel.getInputPanel().getjTxtADescription().getText().equals("")) {
-			room.setDescription(this.insertPanel.getInputPanel().getjTxtADescription().getText());
+		if(!getInputRoomPanel().getjTxtADescription().getText().equals("")) {
+			room.setDescription(getInputRoomPanel().getjTxtADescription().getText());
 		}else {
-			JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(),"El campo descripcion esta vacio");
+			JOptionPane.showMessageDialog(getInputRoomPanel(),"El campo descripcion esta vacio");
 		}
 	
-		if(!this.insertPanel.getInputPanel().getjTxtACharacteristics().getText().equals("")) {
-			room.setCharacteristics(this.insertPanel.getInputPanel().getjTxtACharacteristics().getText());
+		if(!getInputRoomPanel().getjTxtACharacteristics().getText().equals("")) {
+			room.setCharacteristics(getInputRoomPanel().getjTxtACharacteristics().getText());
 		}else {
-			JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(),"El campo caracteristca esta vacio");
+			JOptionPane.showMessageDialog(getInputRoomPanel(),"El campo caracteristca esta vacio");
 		}
 	
-		if(!this.insertPanel.getInputPanel().getjTxtRoomNumber().getText().equals("")) {
-			room.setRoomNumber(this.insertPanel.getInputPanel().getjTxtRoomNumber().getText());
+		if(!getInputRoomPanel().getjTxtRoomNumber().getText().equals("")) {
+			room.setRoomNumber(getInputRoomPanel().getjTxtRoomNumber().getText());
 		}else {
-			JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(),"El campo numero esta vacio");
+			JOptionPane.showMessageDialog(getInputRoomPanel(),"El campo numero esta vacio");
 		}
 	
-		if(!this.insertPanel.getInputPanel().getjTxtPriceNight().getText().equals("")) {
-			room.setPriceNight((Double.parseDouble(this.insertPanel.getInputPanel().getjTxtPriceNight().getText())));
+		if(!getInputRoomPanel().getjTxtPriceNight().getText().equals("")) {
+			room.setPriceNight((Double.parseDouble(getInputRoomPanel().getjTxtPriceNight().getText())));
 		}else {
-			JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(),"El campo precio esta vacio");
+			JOptionPane.showMessageDialog(getInputRoomPanel(),"El campo precio esta vacio");
 		}
 	
-		if(!this.insertPanel.getInputPanel().getjCbxStatusRoom().getSelectedItem().equals("Selecciona un estado de habitación")) {
-			room.setStatusRoom((String) this.insertPanel.getInputPanel().getjCbxStatusRoom().getSelectedItem());
+		if(!getInputRoomPanel().getjCbxStatusRoom().getSelectedItem().equals("Seleccione un estado de habitación")) {
+			room.setStatusRoom((String) getInputRoomPanel().getjCbxStatusRoom().getSelectedItem());
 		}else {
-			JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(),"No ha seleccionado algun estado");
+			JOptionPane.showMessageDialog(getInputRoomPanel(),"No ha seleccionado algun estado");
 		}
 
-		if(!this.insertPanel.getInputPanel().getjCbxRoomType().getSelectedItem().equals("Seleccione un tipo de habitacion")) {
-			room.setRoomType((String) this.insertPanel.getInputPanel().getjCbxRoomType().getSelectedItem());
+		if(!getInputRoomPanel().getjCbxRoomType().getSelectedItem().equals("Seleccione el tipo de habitación")) {
+			room.setRoomType((String) getInputRoomPanel().getjCbxRoomType().getSelectedItem());
 		
 		}else {
-			JOptionPane.showMessageDialog(this.insertPanel.getInputPanel(),"No ha seleccionado un tipo");
-		}*/
-		
-		if(!this.inputRoomPanel.getjTxtIdRoom().getText().equalsIgnoreCase("")) {
-			room.setIdRoom(Integer.parseInt(this.inputRoomPanel.getjTxtIdRoom().getText()));
+			JOptionPane.showMessageDialog(getInputRoomPanel(),"No ha seleccionado un tipo");
 		}
-		
-		if(!this.inputRoomPanel.getjTxtRoomNumber().getText().equals("")) {
-			room.setRoomNumber(this.inputRoomPanel.getjTxtRoomNumber().getText());
-		}else {
-			JOptionPane.showMessageDialog(this.inputRoomPanel,"El campo numero esta vacio");
-		}
-	
-		if(!this.inputRoomPanel.getjCbxFloor().getSelectedItem().equals("Seleccione un piso")) {
-			room.setFloor((String) this.inputRoomPanel.getjCbxFloor().getSelectedItem());
-		
-		}else {
-			JOptionPane.showMessageDialog(this.inputRoomPanel,"No ha seleccionado un piso.");
-		}
-	
-		if(!this.inputRoomPanel.getjTxtADescription().getText().equals("")) {
-			room.setDescription(this.inputRoomPanel.getjTxtADescription().getText());
-		}else {
-			JOptionPane.showMessageDialog(this.inputRoomPanel,"El campo descripcion esta vacio");
-		}
-	
-		if(!this.inputRoomPanel.getjTxtACharacteristics().getText().equals("")) {
-			room.setCharacteristics(this.inputRoomPanel.getjTxtACharacteristics().getText());
-		}else {
-			JOptionPane.showMessageDialog(this.inputRoomPanel,"El campo caracteristca esta vacio");
-		}
-	
-		if(!this.inputRoomPanel.getjTxtRoomNumber().getText().equals("")) {
-			room.setRoomNumber(this.inputRoomPanel.getjTxtRoomNumber().getText());
-		}else {
-			JOptionPane.showMessageDialog(this.inputRoomPanel,"El campo numero esta vacio");
-		}
-	
-		if(!this.inputRoomPanel.getjTxtPriceNight().getText().equals("")) {
-			room.setPriceNight((Double.parseDouble(this.inputRoomPanel.getjTxtPriceNight().getText())));
-		}else {
-			JOptionPane.showMessageDialog(this.inputRoomPanel,"El campo precio esta vacio");
-		}
-	
-		if(!this.inputRoomPanel.getjCbxStatusRoom().getSelectedItem().equals("Selecciona un estado de habitación")) {
-			room.setStatusRoom((String) this.inputRoomPanel.getjCbxStatusRoom().getSelectedItem());
-		}else {
-			JOptionPane.showMessageDialog(this.inputRoomPanel,"No ha seleccionado algun estado");
-		}
-
-		if(!this.inputRoomPanel.getjCbxRoomType().getSelectedItem().equals("Seleccione un tipo de habitacion")) {
-			room.setRoomType((String) this.inputRoomPanel.getjCbxRoomType().getSelectedItem());
-		
-		}else {
-			JOptionPane.showMessageDialog(this.inputRoomPanel,"No ha seleccionado un tipo");
-		}
-		
-		
 		
 		return room;
 	}
 
-
-	public ButtonRoomPanel getButonPanel() {
-		return butonPanel;
+	//Methods get
+	public ButtonRoomPanel getButtonRoomPanel() {
+		return buttonRoomPanel;
+	}
+	
+	public InputRoomPanel getInputRoomPanel() {
+		return inputRoomPanel;
+	}
+	
+	//Methods set
+	public void setButtonRoomPanel(ButtonRoomPanel buttonRoomPanel) {
+		this.buttonRoomPanel = buttonRoomPanel;
 	}
 
-
-	public void setButonPanel(ButtonRoomPanel butonPanel) {
-		this.butonPanel = butonPanel;
+	public void setInputRoomPanel(InputRoomPanel inputRoomPanel) {
+		this.inputRoomPanel = inputRoomPanel;
 	}
+	public QuerysRoom getQueryRoom() {
+		return queryRoom;
+	}
+	public void setQueryRoom(QuerysRoom queryRoom) {
+		this.queryRoom = queryRoom;
+	}
+	
+	
+	
+	
 	
 	
 }
