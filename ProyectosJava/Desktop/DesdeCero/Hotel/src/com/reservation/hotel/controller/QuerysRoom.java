@@ -16,17 +16,52 @@ import com.reservation.hotel.view.panels.room.InputRoomPanel;
 
 public class QuerysRoom {
 	
-	private ConnectionToDB conect=new ConnectionToDB();
-	private Connection cn=conect.getConnectionBD();
+	//private ConnectionToDB conect=new ConnectionToDB();
+	private ConnectionToDB connectToBD;
+	private PreparedStatement pst;
+	//private Connection cn=conect.getConnectionBD();
 	
 	private String querySql="";
 	private Integer registerTotal;
 	
 	public QuerysRoom() {
-		
+		connectToBD=new ConnectionToDB();
 	}
 	
+	public void insertRoom(RoomBean room) {
+		Connection cn=connectToBD.getConnectionBD();
+		
+		JOptionPane.showMessageDialog(null, "Insertando datos desde la clase QuerysRoom");
+		
+		querySql="INSERT INTO room (roomNumber, floor, description, characteristics, priceNight, statusRoom, roomType)"+
+				"VALUES (?, ?, ?, ?, ?, ?, ?)";
+		
+		try {
+			pst=cn.prepareStatement(querySql);
+			
+			pst.setString(1, room.getRoomNumber());
+			pst.setString(2, room.getFloor());
+			pst.setString(3, room.getDescription());
+			pst.setString(4, room.getCharacteristics());
+			pst.setDouble(5, room.getPriceNight());
+			pst.setString(6, room.getStatusRoom());
+			pst.setString(7, room.getRoomType());
+			
+			pst.execute();
+			JOptionPane.showMessageDialog(null, "Datos Ingresados Correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+			
+			pst.close();
+			cn.close();
+		}
+		catch(Exception e) {
+			JOptionPane.showConfirmDialog(null, e);
+		}
+	}
+	
+	
 	public DefaultTableModel showTable(String search) {
+		Connection cn=connectToBD.getConnectionBD();
+		
 		DefaultTableModel modelTable;
 		
 		String[] arrayColumnTitle= {"Id", "Número de Habitación", "Piso", "Descripción", "Característica", "Precio", "Estado Habitación", "Tipo de Habitación"};
@@ -36,8 +71,11 @@ public class QuerysRoom {
 		
 		modelTable=new DefaultTableModel(null, arrayColumnTitle);
 		
+		modelTable.setRowCount(0);
 		querySql="SELECT * FROM room WHERE floor LIKE '%"+search+"%' ORDER BY idRoom";
-				
+		
+		modelTable.fireTableStructureChanged();
+		
 		try {
 			
 			Statement myStatement=cn.createStatement();
@@ -53,17 +91,24 @@ public class QuerysRoom {
 				arrayRegisters[6]=myRs.getString("statusRoom");
 				arrayRegisters[7]=myRs.getString("roomType");
 				
-				this.registerTotal+=1;
+				//this.registerTotal+=1;
 				modelTable.addRow(arrayRegisters);
 			}
+			
+			modelTable.fireTableDataChanged();
+			myRs.close();
+			myStatement.close();
+			cn.close();
+			
 			return modelTable;
+			
 		}catch(Exception e) {
 			JOptionPane.showMessageDialog(null, e);
 			return null;
 		}
 	}
 	
-	public boolean insertRoom(RoomBean room) {
+	/*public boolean insertRoom(RoomBean room) {
 		querySql="INSERT INTO room (roomNumber, floor, description, characteristics, priceNight, statusRoom, roomType)"+
 				"VALUES (?, ?, ?, ?, ?, ?, ?)";
 		
@@ -98,6 +143,9 @@ public class QuerysRoom {
 		}
 		
 	}//end insertRoom
+	
+	
+	
 	
 	public boolean updateRoom(RoomBean room) {
 		querySql="UPDATE room SET roomNumber=?, floor=?, description=?, characteristics=?, priceNight=?, statusRoom=?, roomType=?"+
@@ -153,5 +201,5 @@ public class QuerysRoom {
 			JOptionPane.showConfirmDialog(null, e);
 			return false;
 		}
-	}//end deleteRoom
+	}//end deleteRoom*/
 }
