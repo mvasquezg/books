@@ -12,7 +12,7 @@ public class ButtonRoomPanel extends JPanel{
 
 	private JButton jBtnSave=new JButton("Guardar");
 	private JButton jBtnCancel=new JButton("Cancelar");
-	private JButton jBtNew=new JButton("Nuevo");
+	private JButton jBtnNew=new JButton("Nuevo");
 	
 	private InputRoomPanel inputPanel;
 	
@@ -25,46 +25,43 @@ public class ButtonRoomPanel extends JPanel{
 		setOpaque(false);
 		setBackground(new Color(0, 0,  0, 0));
 		
-		//this.inputPanel=inputPanel;
 		setInputPanel(inputPanel);
 		
-		jBtNew.setEnabled(true);
+		getjBtnNew().setEnabled(true);
+		getjBtnNew().addActionListener(new ButtonRoomFunctionsController(this, getInputPanel()));
+		add(getjBtnNew());
 		
-		jBtNew.addActionListener(new ButtonRoomFunctionsController(this, this.inputPanel, jBtNew, jBtnSave, jBtnCancel));
+		getjBtnSave().setEnabled(false);
+		getjBtnSave().addActionListener(new ButtonRoomFunctionsController(this, getInputPanel()));
+		add(getjBtnSave());
 		
-		add(jBtNew);
-		
-		jBtnSave.setEnabled(false);
-		jBtnSave.addActionListener(new ButtonRoomFunctionsController(this, this.inputPanel, jBtnSave, jBtnSave, jBtnCancel));
-		add(jBtnSave);
-		
-		jBtnCancel.setEnabled(false);
-		jBtnCancel.addActionListener(new ButtonRoomFunctionsController(this, this.inputPanel, jBtnSave, jBtnSave, jBtnCancel));
-		add(jBtnCancel);
+		getjBtnCancel().setEnabled(false);
+		getjBtnCancel().addActionListener(new ButtonRoomFunctionsController(this, getInputPanel()));
+		add(getjBtnCancel());
 	}
 
-	public JButton getjBtSave() {
+	public JButton getjBtnSave() {
 		return jBtnSave;
 	}
 
-	public void setjBtSave(JButton jBtSave) {
-		this.jBtnSave = jBtSave;
+	public void setjBtnSave(JButton jBtnSave) {
+		this.jBtnSave = jBtnSave;
 	}
 
-	public JButton getjBtCancel() {
+	public JButton getjBtnCancel() {
 		return jBtnCancel;
 	}
 
-	public void setjBtCancel(JButton jBtnCancel) {
+	public void setjBtnCancel(JButton jBtnCancel) {
 		this.jBtnCancel = jBtnCancel;
 	}
 
-	public JButton getjBtNew() {
-		return jBtNew;
+	public JButton getjBtnNew() {
+		return this.jBtnNew;
 	}
 
-	public void setjBtNew(JButton jBtNew) {
-		this.jBtNew = jBtNew;
+	public void setjBtNew(JButton jBtnNew) {
+		this.jBtnNew = jBtnNew;
 	}
 
 	public InputRoomPanel getInputPanel() {
