@@ -1,26 +1,38 @@
 package com.reservation.hotel.view.panels.room;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
+import com.reservation.hotel.view.frame.RoomHotelFrame;
+
 public class RoomMainPanel extends JPanel{
-	
 	private static final long serialVersionUID = 2578356520289406250L;
 	
-	private InsertDataPanel insertDataPanel=new InsertDataPanel(); 
+	private InsertDataPanel insertDataPanel; 
 	private ShowDataPanel showDataPanel;
 	
-	public RoomMainPanel() {
+	public RoomMainPanel()	{
 		setLayout(new GridLayout(1, 2, 10, 10));//Divide el panel principal en dos a un tamaño
 		
-		add(insertDataPanel);
-		showDataPanel=new ShowDataPanel(insertDataPanel);
-		add(showDataPanel);
+		setBackground(new Color(219, 213, 219));
+		
+		setBorder(BorderFactory.createTitledBorder("Panel Principal"));
+		
+		setInsertDataPanel(new InsertDataPanel());
+		
+		add(getInsertDataPanel());
+				
+		setShowDataPanel(new ShowDataPanel(getInsertDataPanel()));
+		
+		add(getShowDataPanel());
 	}
-
+	
+	//Methos 
 	public InsertDataPanel getInsertDataPanel() {
-		return insertDataPanel;
+		return this.insertDataPanel;
 	}
 
 	public void setInsertDataPanel(InsertDataPanel insertDataPanel) {
