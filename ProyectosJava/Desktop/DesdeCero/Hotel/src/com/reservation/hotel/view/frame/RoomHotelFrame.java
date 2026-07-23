@@ -11,11 +11,12 @@ public class RoomHotelFrame extends JFrame{
 	
 	private static final long serialVersionUID = -499229605463088406L;
 	
-	private RoomMainPanel roomMainPanel=new RoomMainPanel();
-	//private double percentScreen=0.65;
+	private RoomMainPanel roomMainPanel;
 	private double percentScreen;
 	
 	public RoomHotelFrame() {
+		setRoomMainPanel(new RoomMainPanel());
+
 		Toolkit toolkit=Toolkit.getDefaultToolkit();
 		Dimension newScreenSize=toolkit.getScreenSize();
 
@@ -33,6 +34,8 @@ public class RoomHotelFrame extends JFrame{
 		setLocationRelativeTo(null);
 		
 		setVisible(true);
+		
+		
 		
 		add(getRoomMainPanel());
 	}
