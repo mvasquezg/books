@@ -72,7 +72,7 @@ public class QuerysRoom {
 		modelTable=new DefaultTableModel(null, arrayColumnTitle);
 		
 		modelTable.setRowCount(0);
-		querySql="SELECT * FROM room WHERE floor LIKE '%"+search+"%' ORDER BY idRoom";
+		querySql="SELECT * FROM room WHERE floor LIKE '%"+search+"%' ORDER BY idRoom DESC";
 		
 		modelTable.fireTableStructureChanged();
 		
